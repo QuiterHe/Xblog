@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xblog</title>
+</head>
+<body>
+	<div>
+		<h1>
+			<a href="/">Xblog</a>
+		</h1>
+	</div>
+
+	{% for post in posts %}
+	<div>
+		<h1>
+			<a href="">{{ post.title }}</a>
+		</h1>
+		<p>
+			published: {{ post.published_data }}
+		</p>
+		<p>
+			{{ post.text|linebreaks }}
+		</p>
+	</div>
+	<hr />
+	{% endfor %}
+</body>
+</html>
