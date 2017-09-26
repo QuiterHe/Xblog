@@ -16,21 +16,7 @@
 			<a href="/">Xblog</a>
 		</h1>
 	</div>
-
-	{% for post in posts %}
-	<div>
-		<h1>
-			<a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
-		</h1>
-		<p>
-			published: {{ post.published_data }}
-		</p>
-		<p>
-			{{ post.text|linebreaks }}
-		</p>
-	</div>
-	<hr />
-	{% endfor %}
+	<div class="date"></div>
 
 </body>
 </html>
