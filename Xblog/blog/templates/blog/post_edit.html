@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Post</title>
+</head>
+<body>
+	<h1>
+		New Post Page
+	</h1>
+	<form method="POST" class="post-form">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="save btn btn-default">Save</button>
+	</form>
+</body>
+</html>
