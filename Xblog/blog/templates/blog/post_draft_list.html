@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xblog</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+</head>
+<body>
+	<div>
+		<h1>
+			<a href="/">Xblog</a>
+		</h1>
+	</div>
+	<div>
+		<a href="{% url 'blog.views.post_new' %}"></a>
+	</div>
+
+	{% for post in posts %}
+	<div>
+		<h1>
+			<a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
+		</h1>
+		<p>
+			published: {{ post.published_data }}
+		</p>
+		<p>
+			{{ post.text|linebreaks }}
+		</p>
+		<a class="btn btn-default" href="{% url 'blog.views.post_publish' pk=post.pk %}">Publish</a>
+	</div>
+	<hr />
+	{% endfor %}
+
+</body>
+</html>
