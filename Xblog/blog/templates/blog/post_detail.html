@@ -16,7 +16,19 @@
 			<a href="/">Xblog</a>
 		</h1>
 	</div>
-	<div class="date"></div>
+	<div>
+		<h1>
+			{{ post.title }}
+		</h1>
+		<p>
+	        {% if post.published_data %}
+	            {{ post.published_data }}
+	        {% endif %}
+		</p>
+		<p>
+			{{ post.text|linebreaks }}
+		</p>
+	</div>
 
 </body>
 </html>
